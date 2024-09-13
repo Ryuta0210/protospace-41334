@@ -40,7 +40,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_09_10_100501) do
   end
 
   create_table "comments", charset: "utf8", force: :cascade do |t|
-    t.text "content"
+    t.text "content", null: false
     t.bigint "prototype_id"
     t.bigint "user_id"
     t.datetime "created_at", null: false

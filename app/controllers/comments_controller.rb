@@ -6,6 +6,7 @@ class CommentsController < ApplicationController
       redirect_to prototype_path(@prototype)
     else
       @comments = @prototype.comments.includes(:user)
+      flash.now[:alert] = 'コメントを入力してください。'
       render "prototypes/show"
     end
   end
